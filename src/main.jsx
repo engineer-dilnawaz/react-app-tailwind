@@ -9,17 +9,17 @@ import Error from "./components/Error.jsx";
 // import About from "./components/About.jsx";
 // import Home from "./components/Home.jsx";
 
-const About = lazy(() => wait(1000).then(() => import("./components/About")));
+const About = lazy(() => wait(0).then(() => import("./components/About")));
 
 const Contact = lazy(() =>
-  wait(1000).then(() =>
+  wait(0).then(() =>
     import("./components/Contact").then((module) => ({
       default: module.Contact,
     })),
   ),
 );
 
-const Home = lazy(() => wait(1000).then(() => import("./components/Home")));
+const Home = lazy(() => wait(0).then(() => import("./components/Home")));
 
 const router = createBrowserRouter([
   {
