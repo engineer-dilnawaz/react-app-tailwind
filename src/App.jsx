@@ -7,7 +7,9 @@ function App() {
   return (
     <>
       <Header />
-      <Outlet />
+      <main className="px-4 py-4 md:px-8">
+        <Outlet />
+      </main>
     </>
   );
 }

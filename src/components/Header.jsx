@@ -38,6 +38,7 @@ export default function Header() {
             Contact
           </NavLink>
         </li>
+        <li>Sign In</li>
       </ul>
     </header>
   );
