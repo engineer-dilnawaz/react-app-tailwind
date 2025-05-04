@@ -1,7 +1,7 @@
 import { Fragment, useState } from "react";
 import Modal from "./Modal";
 
-export default function Contact() {
+export function Contact() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
