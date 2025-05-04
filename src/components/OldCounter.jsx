@@ -14,23 +14,24 @@ export default class OldCounter extends Component {
       //   count2: 0,
     };
     this.timerId = null;
-    console.log("constructor"); //1st
+
+    this.increaseCount = this.increaseCount.bind(this);
+    // console.log("constructor"); //1st
   }
 
   componentDidMount() {
-    console.log("componentDidMount");
-
+    // console.log("componentDidMount");
     // this.timerId = setInterval(() => {
     //   console.log('hi')
     // }, 1000)
   }
 
   componentDidUpdate() {
-    console.log("componentDidUpdate");
+    // console.log("componentDidUpdate");
   }
 
   componentWillUnmount() {
-    console.log("componentWillUnmount");
+    // console.log("componentWillUnmount");
     // clearInterval(this.timerId)
   }
 
@@ -40,8 +41,12 @@ export default class OldCounter extends Component {
   //     return true;
   //   }
 
+  increaseCount() {
+    this.setState({ count: this.state.count + 1 });
+  }
+
   render() {
-    console.log("render"); //2nd
+    // console.log("render"); //2nd
     const { name } = this.props;
     const { count } = this.state;
     return (
@@ -50,18 +55,23 @@ export default class OldCounter extends Component {
         <div className="mt-2 flex items-center gap-4">
           <button
             className="cursor-pointer rounded bg-blue-400 px-4 py-1"
-            onClick={() => {
+            // onClick={() => {
+            //   this.setState({ count: count - 1 });
+            // }}
+            onClick={function () {
               this.setState({ count: count - 1 });
-            }}
+            }.bind(this)}
           >
             -
           </button>
           <h2>{count}</h2>
           <button
             className="cursor-pointer rounded bg-blue-400 px-4 py-1"
-            onClick={() => {
-              this.setState({ count: count + 1 });
-            }}
+            // onClick={() => {
+            //   this.setState({ count: count + 1 });
+            // }}
+            // onClick={this.increaseCount.bind(this)}
+            onClick={this.increaseCount}
           >
             +
           </button>
